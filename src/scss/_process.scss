@@ -1,0 +1,42 @@
+.process {
+    background-color: #789be6;
+    //background-color: red;
+    padding: 120px 0;
+}
+.process__items {
+    display: flex;
+    justify-content: space-between;
+}
+.process__item {
+    padding-right: 50px;
+    flex: 1 1 60%;
+    text-align: center;
+    &:nth-child(2) {
+        padding: 0 0 0 50px;
+        flex: 0 1 40%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+.process__img-bg {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    .simpleParallax {
+        overflow: visible !important;
+        // padding: 15%;
+        padding: 10%;
+    }
+}
+.process__img {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 30%;
+    z-index: -1;
+}
+.process__title {
+    text-align: right;
+    margin-top: 20px;
+}

@@ -1,0 +1,98 @@
+.catalog {
+    background-color: $bg-base;
+    padding: 100px 0;
+    margin: 150px 0 0;
+    .swiper-pagination {
+        position: static;
+        margin-top: 20px;
+        .swiper-pagination-bullet {
+            position: relative;
+            margin: 0 5px !important;
+            width: 8px;
+            height: 8px;
+            background-color: #fff;
+            border-radius: 0;
+            opacity: 1;
+            &::after {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #000;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -3px;
+                margin-top: -3px;
+                opacity: 0;
+                visibility: hidden;
+                transform: scale(0);
+                transition: all 0.3s ease-out;
+            }
+            &.swiper-pagination-bullet-active::after {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+                transition: all 0.3s ease-in;
+            }
+        }
+    }
+}
+.catalog__title {
+    margin-bottom: 20px;
+}
+.icon {
+    width: 50px;
+    height: auto;
+}
+.catalog__items {
+    padding: 100px 0 50px;
+}
+.catalog__item {
+    margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+    &:hover .catalog__item-descr {
+        transform: translateY(-100%);
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease-in;
+        pointer-events: all;
+    }
+    &:hover .catalog__item-img {
+        transform: translateY(-50%);
+        transition: transform 0.3s ease-in;
+    }
+}
+.catalog__item-descr {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $font-s-base;
+    font-weight: $font-w-base;
+    color: $color-white;
+    // margin-top: 15px;
+    opacity: 0;
+    visibility: hidden;
+    bottom: -50%;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    transition: all 0.3s ease-out;
+    pointer-events: none;
+    p {
+        margin-right: 10px;
+    }
+}
+.catalog__item-img {
+    height: 170px;
+    line-height: 170px;
+    text-align: center;
+    transition: transform 0.3s ease-out;
+    will-change: transform;
+    pointer-events: none;
+    img {
+        max-height: 100%;
+        vertical-align: middle;
+    }
+}
